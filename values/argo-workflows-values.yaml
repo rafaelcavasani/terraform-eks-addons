@@ -1,0 +1,17 @@
+controller:
+  replicaCount: 1
+  workflowNamespaces:
+    - default
+  service:
+    type: ClusterIP
+
+executor:
+  serviceAccount:
+    create: true
+
+server:
+  replicaCount: 1
+  service:
+    type: LoadBalancer
+  extraArgs:
+    - --basehref=/argo/
